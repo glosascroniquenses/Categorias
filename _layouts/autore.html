@@ -33,61 +33,19 @@ layout: default
 	<section id="{{ word | downcase }}">		
         <h2>{{ word }}</h2>
 		
-{% for row in rows %}
-{% if row.Palabra == word %}
-{% if row.enlace == "sin datos" %}
-	{% break %}
-{% else %}
-	<h2><a href="{{ row.enlace }}" style="color: #750C41;">Ver Ficha léxica</a></h2>{% break %}
-{% endif %}
-{% endif %}
-{% endfor %}	
-		
-		
-{% for row in rows %}
-{% if row.Palabra == word %}	
-{% if row.lengua == "" %}
-{% break %}
-{% else %}	
-	<table>
-          <thead>
-            <tr>
-              <th>Lengua</th>
-	      <th>Propuesta de pronunciación</th>
-	      <th>Notas</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for row in rows %}
-          {% if row.Palabra == word %}
-            <tr>
-              <td>{{ row.lengua }}</td>
- 	      <td>{{ row.propuesta }}</td>
-	      <td>{{ row.nota }}{% break %}</td>  
-            </tr>
-          {% endif %}
-          {% endfor %}
-      </tbody>
-    </table>{% break %}	
-{% endif %}
-{% endif %}
-{% endfor %}		
-
 </br>
 	
 	<table>
           <thead>
             <tr>
               <th>Cita</th>
-	      <th>Número de página</th>
             </tr>
           </thead>
           <tbody>
           {% for row in rows %}
           {% if row.Palabra == word %}
             <tr>
-              <td>{{ row.cita }}</td>
-	      <td valign="center">{{ row.pagina }}</td>		    
+              <td>{{ row.cita }}</td>    
             </tr>
           {% endif %}
           {% endfor %}
