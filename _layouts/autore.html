@@ -36,14 +36,14 @@ layout: default
 	<table>
           <thead>
             <tr>
-              <th>Cita</th>
+              <th>Palabra [Cronista]</th>
             </tr>
           </thead>
           <tbody>
           {% for row in rows %}
           {% if row.Palabra == word %}
             <tr>
-              <td><a href="{{ row.web }}">{{ row.cita }}{{ row.Nombre de cronista }}</a></td>    
+              <td><a href="{{ row.web }}">{{ row.cita }}</a></td>    
             </tr>
           {% endif %}
           {% endfor %}
